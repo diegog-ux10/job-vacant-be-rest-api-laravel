@@ -16,8 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('description');
             $table->string('salary');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }

@@ -15,10 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('job_vacancy_id');
-            $table->foreign('user_id')->references('user_id')->on('job_vacancies')->onDelete('set null');
-            $table->foreign('job_vacancy_id')->references('id')->on('job_vacancies')->onDelete('set null');
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('job_vacancy_id')->constrained();
             $table->timestamps();
         });
     }

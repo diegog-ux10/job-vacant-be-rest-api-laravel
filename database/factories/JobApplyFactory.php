@@ -17,7 +17,8 @@ class JobApplyFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->firstName(),
+            'email' => fake()->email()
         ];
     }
 }
