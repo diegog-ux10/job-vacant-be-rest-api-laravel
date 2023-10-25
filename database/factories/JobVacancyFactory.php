@@ -22,7 +22,7 @@ class JobVacancyFactory extends Factory
             'description' => fake()->company(),
             'salary' => fake()->randomNumber(),
             'user_id' => function(){
-                return JobApply::inRandomOrder()->first()->id;
+                return User::inRandomOrder()->first()->id;
             },
         ];
     }
