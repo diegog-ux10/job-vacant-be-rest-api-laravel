@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\JobVacancy;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,7 +19,10 @@ class JobApplyFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'email' => fake()->email()
+            'email' => fake()->email(),
+            'job_vacancy_id' => function(){
+                return JobVacancy::inRandomOrder()->first()->id;
+            },
         ];
     }
 }

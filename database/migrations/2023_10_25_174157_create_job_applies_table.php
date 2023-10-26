@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->foreignId('user_id')->constrained();
             $table->foreignId('job_vacancy_id')->constrained();
             $table->timestamps();
         });
