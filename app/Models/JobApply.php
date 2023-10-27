@@ -14,7 +14,7 @@ class JobApply extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function jobVacancy()
+    public function job_vacancy()
     {
         return $this->belongsTo(JobVacancy::class);
     }
