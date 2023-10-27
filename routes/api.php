@@ -28,3 +28,4 @@ Route::controller(UserController::class)->group(function () {
 
 Route::apiResource('job-vacancy', JobVacancyController::class);
 Route::apiResource('job-apply', JobApplyController::class);
+
