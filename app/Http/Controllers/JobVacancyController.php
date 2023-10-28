@@ -13,8 +13,13 @@ class JobVacancyController extends Controller
 
     public function index()
     {
-        $jobVacancies = JobVacancy::with('user')->get();
-        return response()->json($jobVacancies);
+        $jobVacancies = JobVacancy::with('user')->paginate(10); // You can adjust the number per page (e.g., 10)
+
+        return response()->json([
+            'vacancies' => $jobVacancies->items(),
+            'currentPage' => $jobVacancies->currentPage(),
+            'totalPages' => $jobVacancies->lastPage(),
+        ]);
     }
 
     public function show($id)
