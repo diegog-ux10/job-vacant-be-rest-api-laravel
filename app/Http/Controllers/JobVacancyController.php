@@ -13,8 +13,12 @@ class JobVacancyController extends Controller
 
     public function index(Request $request)
     {
-        if($request->all() === []) {
+        if ($request->all() === []) {
             $jobVacancies = JobVacancy::with('user')->get();
+            return response()->json($jobVacancies);
+        }
+        if (request('id')) {
+            $jobVacancies = JobVacancy::with('user')->where('user_id', request('id'))->get();
             return response()->json($jobVacancies);
         }
 
