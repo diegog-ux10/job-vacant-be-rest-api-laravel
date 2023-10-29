@@ -11,14 +11,20 @@ class JobVacancyController extends Controller
      * Display a listing of the resource.
      */
 
-    public function index()
+    public function index(Request $request)
     {
+        if($request->all() === []) {
+            $jobVacancies = JobVacancy::with('user')->get();
+            return response()->json($jobVacancies);
+        }
+
         $jobVacancies = JobVacancy::with('user')->paginate(10);
 
         return response()->json([
             'vacancies' => $jobVacancies->items(),
             'currentPage' => $jobVacancies->currentPage(),
             'totalPages' => $jobVacancies->lastPage(),
+            'request' => $request->all()
         ]);
     }
 
