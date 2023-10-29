@@ -18,8 +18,8 @@ class JobVacancyFactory extends Factory
     public function definition(): array
     {
         return [
-           'title' => fake()->title(),
-            'description' => fake()->company(),
+           'title' => fake()->jobTitle(),
+            'description' => fake()->word(),
             'salary' => fake()->randomNumber(),
             'user_id' => function(){
                 return User::inRandomOrder()->first()->id;
