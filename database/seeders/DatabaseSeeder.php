@@ -16,9 +16,6 @@ class DatabaseSeeder extends Seeder
         \App\Models\JobVacancy::factory(10)->create();
         \App\Models\JobApply::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        
     }
 }
