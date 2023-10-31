@@ -23,7 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::controller(UserController::class)->group(function () {
-    Route::get('/login', 'login');
+    Route::post('/login', 'login');
 });
 
 Route::apiResource('job-vacancy', JobVacancyController::class);
