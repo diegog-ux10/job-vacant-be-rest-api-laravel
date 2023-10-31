@@ -18,7 +18,12 @@ return new class extends Migration
             $table->string('phone');
             $table->date('birthdate');
             $table->integer('work_experience');
-            $table->foreignId('job_vacancy_id')->constrained();
+            $table->unsignedBigInteger('job_vacancy_id');
+            $table->foreign('job_vacancy_id')
+          ->references('id')
+          ->on('job_vacancies')
+          ->onDelete('cascade');
+            //$table->foreignId('job_vacancy_id')->constrained();
             $table->timestamps();
         });
     }
