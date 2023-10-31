@@ -1,12 +1,12 @@
-#API Documentation
+# API Documentation
 
-##introduction
+## introduction
 
 REST API for web aplication of work, whit vacancies and applies of multipler work.
 
-##Applies Endpoints
+## Applies Endpoints
 
-###Get /api/job-applies
+### Get /api/job-applies
 
 **Description**
 
@@ -17,19 +17,19 @@ Return all job applies resgistred in the database.
 No parameters needed.
 
 **Response**
-    
+
     {
-       
+
         "name": "daniel",
         "email": "daniel@gmail.com",
         "user_id":2,
         "job_vacancy_id":3,
         "created_at": "2023-10-27T15:15:32.000000Z",
         "updated_at": "2023-10-27T15:15:32.000000Z"
-        
+
     }
 
-###Get /api/job-applies/:id
+### Get /api/job-applies/:id
 
 **Description**
 
@@ -40,19 +40,19 @@ Return a job applies for that id resgistred in the database.
 No parameters needed.
 
 **Response**
-    
+
     {
-       
+
         "name": "daniel",
         "email": "daniel@gmail.com",
         "user_id":2,
         "job_vacancy_id":3,
         "created_at": "2023-10-27T15:15:32.000000Z",
         "updated_at": "2023-10-27T15:15:32.000000Z"
-        
+
     }
 
-###POST /api/job-applies
+### POST /api/job-applies
 
 **Description**
 
@@ -63,11 +63,11 @@ Create a new job apply
 No parameters needed.
 
 **Resquest**
-    
+
     {
         "name": "daniel"
     }
-    
+
 **Response**
 
     {
@@ -79,7 +79,7 @@ No parameters needed.
         "updated_at": "2023-10-27T15:15:32.000000Z"
     }
 
-###PUT /api/job-applies/:id
+### PUT /api/job-applies/:id
 
 **Description**
 
@@ -90,11 +90,11 @@ Update a job apply
     id:id
 
 **Resquest**
-    
+
     {
         "name": "daniel"
     }
-    
+
 **Response**
 
     {
@@ -106,7 +106,7 @@ Update a job apply
         "updated_at": "2023-10-27T15:15:32.000000Z"
     }
 
-###DELETE /api/job-applies/:id
+### DELETE /api/job-applies/:id
 
 **Description**
 
@@ -116,9 +116,9 @@ Delete a job apply by id
 
     id:id
 
-##Vacancy Endpoints
+## Vacancy Endpoints
 
-###Get /api/job-vacancy
+### Get /api/job-vacancy
 
 **Description**
 
@@ -129,9 +129,9 @@ Return all job vacancies resgistred in the database.
 No parameters needed.
 
 **Response**
-    
+
     {
-    
+
     "title": "Mrs.",
     "description": "Ankunding and Sons",
     "salary": "3",
@@ -152,9 +152,9 @@ Return a job vacancy for the id that resgistred in the database.
 No parameters needed.
 
 **Response**
-    
+
     {
-    
+
     "title": "Mrs.",
     "description": "Ankunding and Sons",
     "salary": "3",
@@ -164,7 +164,7 @@ No parameters needed.
 
     }
 
-###POST /api/job-vacancy
+### POST /api/job-vacancy
 
 **Description**
 
@@ -175,19 +175,19 @@ Create a new job apply
 No parameters needed.
 
 **Resquest**
-    
+
     {
-    
+
     "title": "Mrs.",
     "description": "Ankunding and Sons",
     "salary": "3"
 
     }
-    
+
 **Response**
 
     {
-    
+
     "title": "Mrs.",
     "description": "Ankunding and Sons",
     "salary": "3",
@@ -197,7 +197,7 @@ No parameters needed.
 
     }
 
-###PUT /api/job-vacancy/:id
+### PUT /api/job-vacancy/:id
 
 **Description**
 
@@ -208,19 +208,19 @@ Update a job vacancy
     id:id
 
 **Resquest**
-    
+
     {
-    
+
     "title": "Mrs.",
     "description": "Ankunding and Sons",
     "salary": "3"
-    
+
     }
-    
+
 **Response**
 
-   {
-    
+{
+
     "title": "Mrs.",
     "description": "Ankunding and Sons",
     "salary": "3",
@@ -230,7 +230,7 @@ Update a job vacancy
 
     }
 
-###DELETE /api/job-applies/:id
+### DELETE /api/job-applies/:id
 
 **Description**
 
@@ -239,28 +239,3 @@ Delete a job apply by id
 **Parameters**
 
     id:id
-
-
-##User endpoints
-
-###POST /api/job-vacancy
-
-**Description**
-
-Create a new job apply
-
-**Parameters**
-
-No parameters needed.
-
-**Resquest**
-    
-    {
-    
-    "email": "daniel@gmail.com",
-    "password": "12345"
-
-    }
-    
-
-
