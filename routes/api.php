@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\JobApplyController;
+use App\Http\Controllers\JobVacancyController;
 use App\Http\Controllers\UserController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::controller(UserController::class)->group(function () {
     Route::post('/login', 'login');
 });
+
+Route::apiResource('job-vacancy', JobVacancyController::class);
+Route::apiResource('job-apply', JobApplyController::class);
+
